@@ -13,7 +13,7 @@ public class Sort {
 	////----------sort function--------
 	/**
 	 *the class handle the sorting process.
-	 *by sginal.
+	 *by sginal...
 	 * @return 
 	 * @throws FileNotFoundException
 	 */
