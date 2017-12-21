@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>JAK Example1</name>
+        <open>1</open>
+        <Style id="style_boaz1">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_boaz2">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Folder>
+            <name>WIFI newtworks</name>
+            <open>1</open>
+            <Placemark>
+                <name>boaz1</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;boaz1&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.10391194&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;35.2094526&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;boaz1&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>35.2094526</longitude>
+                    <latitude>32.10391194</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>27/10/2017T16:35</when>
+                </TimeStamp>
+                <styleUrl>#style_boaz1</styleUrl>
+                <Point>
+                    <coordinates>35.2094526,32.10391194</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>boaz2</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;boaz2&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.10383385&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;35.20937813&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;boaz2&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>35.20937813</longitude>
+                    <latitude>32.10383385</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>27/10/2017T16:35</when>
+                </TimeStamp>
+                <styleUrl>#style_boaz2</styleUrl>
+                <Point>
+                    <coordinates>35.20937813,32.10383385</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>

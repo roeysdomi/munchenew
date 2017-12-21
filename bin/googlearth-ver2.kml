@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>JAK Example1</name>
+        <open>1</open>
+        <Style id="style_Bezeq_WiFi">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free RA583B">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free D02536">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free NA1F34">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq-N_c5c5a1">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free 0a5352">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqFree">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqNGN_001489_2.4GHz_1">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free 3A4428">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqNGN_98087">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free 9A236D">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq2.4">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq-n_DA8C">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_BezeqNGN_J03015_2.4GHz_1">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Bezeq Free F026CC">
+            <IconStyle>
+                <scale>1.0</scale>
+                <heading>0.0</heading>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>1.0</scale>
+            </LabelStyle>
+        </Style>
+        <Folder>
+            <name>WIFI newtworks</name>
+            <open>1</open>
+            <Placemark>
+                <name>Bezeq_WiFi</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq_WiFi&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16773176&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80302721&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq_WiFi&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80302721</longitude>
+                    <latitude>32.16773176</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:24:52</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq_WiFi</styleUrl>
+                <Point>
+                    <coordinates>34.80302721,32.16773176</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free RA583B</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free RA583B&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.17324726&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80921234&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free RA583B&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80921234</longitude>
+                    <latitude>32.17324726</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:26:37</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free RA583B</styleUrl>
+                <Point>
+                    <coordinates>34.80921234,32.17324726</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free D02536</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free D02536&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.1677094&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80591024&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free D02536&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80591024</longitude>
+                    <latitude>32.1677094</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:25:25</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free D02536</styleUrl>
+                <Point>
+                    <coordinates>34.80591024,32.1677094</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free NA1F34</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free NA1F34&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.1707069&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80079707&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free NA1F34&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80079707</longitude>
+                    <latitude>32.1707069</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:21:33</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free NA1F34</styleUrl>
+                <Point>
+                    <coordinates>34.80079707,32.1707069</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq-N_c5c5a1</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq-N_c5c5a1&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16825198&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80351026&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq-N_c5c5a1&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80351026</longitude>
+                    <latitude>32.16825198</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:19:59</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq-N_c5c5a1</styleUrl>
+                <Point>
+                    <coordinates>34.80351026,32.16825198</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free 0a5352</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free 0a5352&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16896675&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80022497&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free 0a5352&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80022497</longitude>
+                    <latitude>32.16896675</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:23:28</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free 0a5352</styleUrl>
+                <Point>
+                    <coordinates>34.80022497,32.16896675</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16799787&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80501351&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80501351</longitude>
+                    <latitude>32.16799787</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:25:13</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.80501351,32.16799787</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16787842&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80562835&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80562835</longitude>
+                    <latitude>32.16787842</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:25:19</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.80562835,32.16787842</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16866695&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.81322274&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.81322274</longitude>
+                    <latitude>32.16866695</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:14:37</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.81322274,32.16866695</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.17246041&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80146374&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80146374</longitude>
+                    <latitude>32.17246041</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:22:15</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.80146374,32.17246041</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.17329851&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.8080852&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.8080852</longitude>
+                    <latitude>32.17329851</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:26:25</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.8080852,32.17329851</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16844882&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80120414&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80120414</longitude>
+                    <latitude>32.16844882</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:20:46</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.80120414,32.16844882</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16851102&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80047649&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80047649</longitude>
+                    <latitude>32.16851102</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:20:54</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.80047649,32.16851102</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqFree</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqFree&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16851102&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80047649&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqFree&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80047649</longitude>
+                    <latitude>32.16851102</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:20:54</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqFree</styleUrl>
+                <Point>
+                    <coordinates>34.80047649,32.16851102</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16799787&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80501351&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80501351</longitude>
+                    <latitude>32.16799787</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:25:13</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free</styleUrl>
+                <Point>
+                    <coordinates>34.80501351,32.16799787</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.17223115&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80762906&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80762906</longitude>
+                    <latitude>32.17223115</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:26:13</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free</styleUrl>
+                <Point>
+                    <coordinates>34.80762906,32.17223115</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16857669&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80014154&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80014154</longitude>
+                    <latitude>32.16857669</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:23:34</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free</styleUrl>
+                <Point>
+                    <coordinates>34.80014154,32.16857669</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.17208714&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.81204662&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.81204662</longitude>
+                    <latitude>32.17208714</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:27:21</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free</styleUrl>
+                <Point>
+                    <coordinates>34.81204662,32.17208714</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqNGN_001489_2.4GHz_1</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqNGN_001489_2.4GHz_1&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16957016&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.81081783&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqNGN_001489_2.4GHz_1&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.81081783</longitude>
+                    <latitude>32.16957016</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:27:45</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqNGN_001489_2.4GHz_1</styleUrl>
+                <Point>
+                    <coordinates>34.81081783,32.16957016</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free 3A4428</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free 3A4428&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16873071&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.8001699&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free 3A4428&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.8001699</longitude>
+                    <latitude>32.16873071</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:23:31</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free 3A4428</styleUrl>
+                <Point>
+                    <coordinates>34.8001699,32.16873071</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqNGN_98087</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqNGN_98087&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16873071&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.8001699&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqNGN_98087&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.8001699</longitude>
+                    <latitude>32.16873071</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:23:31</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqNGN_98087</styleUrl>
+                <Point>
+                    <coordinates>34.8001699,32.16873071</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free 9A236D</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free 9A236D&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.17306255&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.81011613&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free 9A236D&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.81011613</longitude>
+                    <latitude>32.17306255</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:26:43</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free 9A236D</styleUrl>
+                <Point>
+                    <coordinates>34.81011613,32.17306255</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq2.4</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq2.4&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16686569&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.8088424&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq2.4&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.8088424</longitude>
+                    <latitude>32.16686569</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:18:54</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq2.4</styleUrl>
+                <Point>
+                    <coordinates>34.8088424,32.16686569</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq-n_DA8C</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq-n_DA8C&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16794123&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80115899&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq-n_DA8C&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80115899</longitude>
+                    <latitude>32.16794123</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:23:52</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq-n_DA8C</styleUrl>
+                <Point>
+                    <coordinates>34.80115899,32.16794123</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BezeqNGN_J03015_2.4GHz_1</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;BezeqNGN_J03015_2.4GHz_1&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16858542&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.80020728&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;BezeqNGN_J03015_2.4GHz_1&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.80020728</longitude>
+                    <latitude>32.16858542</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:21:01</when>
+                </TimeStamp>
+                <styleUrl>#style_BezeqNGN_J03015_2.4GHz_1</styleUrl>
+                <Point>
+                    <coordinates>34.80020728,32.16858542</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Bezeq Free F026CC</name>
+                <description>&lt;![CDATA[BSSID: &lt;b&gt;Bezeq Free F026CC&lt;/b&gt;&lt;br/&gt;Lat: &lt;b&gt;32.16989007&lt;/b&gt;&lt;br/&gt;Lot: &lt;b&gt;34.81096842&lt;/b&gt;&lt;br/&gt;Name: &lt;b&gt;Bezeq Free F026CC&lt;/b&gt;</description>
+                <LookAt>
+                    <longitude>34.81096842</longitude>
+                    <latitude>32.16989007</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <TimeStamp>
+                    <when>2017-10-27T16:27:42</when>
+                </TimeStamp>
+                <styleUrl>#style_Bezeq Free F026CC</styleUrl>
+                <Point>
+                    <coordinates>34.81096842,32.16989007</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>
