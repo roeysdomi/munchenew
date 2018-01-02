@@ -8,6 +8,8 @@ public class Wifi {
 	public String signal;
 	public int line;
 	public double pie;
+	public String deviceid;
+	public String channel;
 	Location loc=new Location();
 	
    
@@ -40,6 +42,7 @@ public class Wifi {
 		this.mac=words[0];
 		this.id=words[1];
 		this.time=words[3];
+		this.channel=words[4];
 		this.signal=words[5];
 		this.loc.lat=(words[6]);		
 		this.loc.lot=(words[7]);
@@ -217,11 +220,23 @@ public class Wifi {
 	}
 
 ///------------get and set---------
+	
+	
+	
+	
+	
+	
 	public void setWifinum(String wifinum) {
 		this.wifinum = wifinum;
 	}
 
 
+	public String getDeviceid() {
+		return deviceid;
+	}
+	public void setDeviceid(String deviceid) {
+		this.deviceid = deviceid;
+	}
 	public String getMac() {
 		return mac;
 	}

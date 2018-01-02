@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Reads.Read;
+import Wifi.Wifi;
+
 
 public class Count {
 	
@@ -44,7 +47,23 @@ public int countrowsCSV() throws FileNotFoundException
  return z;
 }
 
-
+public int countmacs(ArrayList<Wifi> sample)
+{
+	
+    ArrayList<Wifi>  temp=new ArrayList<>(sample);
+    String roey = "";
+    int counter=0;
+    for(int i=0;i<temp.size();i++)
+    {
+    	String currect=temp.get(i).getMac();
+    	if(!roey.contains(currect))
+    	{
+    		roey=roey+currect;
+    		counter++;
+    	}
+    }
+   return counter;
+}
 
 //------------get and set-------------
 

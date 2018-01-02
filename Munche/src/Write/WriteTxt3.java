@@ -71,7 +71,6 @@ public class WriteTxt3 {
         readtext1.setCsvfilename("\\INPUT\\target\\"+g);
        
        ListLiner=readtext1.ReadeCombCsv();
-       System.out.println("dd");
 	}
  	
  	public void Writewifi_liner(int i) throws IOException 

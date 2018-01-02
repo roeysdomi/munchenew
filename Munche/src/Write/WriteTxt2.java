@@ -116,16 +116,16 @@ public class WriteTxt2 {
                     				 
 				      
 				 
-				 if(a1.choose==1) 
-	             {if(com.IDComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
-	             if(a1.choose==3) 
-	             {if(com.TimeComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
-	             if(a1.choose==4) 
+				 //if(a1.choose==1) 
+	            // {if(com.IDComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
+	           //  if(a1.choose==3) 
+	          //   {if(com.TimeComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
+	           //  if(a1.choose==4) 
 	             {if(com.LocComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
-	             if(a1.choose==6) 
-	             {if(com.MacComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
-	             if(a1.choose==5) 
-	             {if(com.AllComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
+	             //if(a1.choose==6) 
+	             ///{if(com.MacComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
+	             //if(a1.choose==5) 
+	             //{if(com.AllComperator(i, z)) {tempcount.add(ListLiner.get(z));ListLiner.set(z,dead );}};
 	             
 			           
 			           
@@ -149,7 +149,7 @@ public class WriteTxt2 {
 		     Fix_tempcount=new ArrayList<Wifi>();
 			 Sort_tempcount=sort.SortSignal();
 		     ///------------------
-			// Fix_tempcount=new ArrayList<Wifi>(Sort_tempcount);
+			 //Fix_tempcount=new ArrayList<Wifi>(Sort_tempcount);
 		     /////--------------------
 		     //if(a1.choose==6)
 		    Writefixmac();
@@ -178,12 +178,15 @@ public class WriteTxt2 {
 				  Wifi wifi1=temp.get(t);
 				   
 				   Fix_tempcount.add(temp.get(t));
-					for(int y=0;y<temp.size();y++)
-				  {  if(!temp.get(y).equals("1"))
+					for(int y=t;y<temp.size();y++)
+				  {  
+						if(!temp.get(y).equals("1"))
 					    {
 					        Wifi wifi2=temp.get(y);
+					        
 					        if( wifi1.Comperator(wifi1.getMac(), wifi2.getMac())&&t!=y)
 					        {  temp.set(y,dead); }
+					    
 					    }
 				  }
 			  
@@ -231,13 +234,14 @@ public class WriteTxt2 {
 	     int counter=0;
 	      for(int i=0;i<x;i++)
 	      { 
+	    	 /*
 	    	  count1++;
 	    	  if(count1==all2+1)
 	    	  {
 	          System.out.println("        ||procces:("+counter+"%)||");
 	          counter++;
 	          count1=0;
-	          }
+	          }*/
 	    	  
 	    	//----יוצרמסמך זמני של ה האיי הראשון
 	       if(!ListLiner.get(i).getMac().equals("1"))

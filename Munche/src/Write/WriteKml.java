@@ -16,14 +16,18 @@ import de.micromata.opengis.kml.v_2_2_0.Style;
 public class WriteKml {
 	String path=System.getProperty("user.dir")+"\\";
 	String csvpath=System.getProperty("user.dir")+"\\csv\\";
-	
+	public ArrayList<Wifi> kml_list;
 	/**
 	 * This class handle all the process that create the kml file 
 	 * for google earth.
 	 * @throws IOException
 	 */
 	
-	
+	public WriteKml(ArrayList<Wifi> list)
+	{
+		kml_list=new ArrayList<Wifi>(list);
+		
+	}
 	////////-----------create kml function-----
 	
 	
@@ -113,11 +117,7 @@ public class WriteKml {
 		 */
 		
 		////-----ךקיחת קובץ קריאה 
-		Read a1=new Read();
-	    a1.setCsvfilename("filterd");
-		a1.convertcsvtotxt();
-		a1.setLoc(path+"\\tempfiles\\"+"filterd.txt");
-		ArrayList<String>temp=a1.converttocsv2();
+	    
 	     
 		///------------כתיבת  הKML
 		final Kml kml = new Kml();
@@ -128,15 +128,15 @@ public class WriteKml {
 		folder.withName("WIFI newtworks").withOpen(true);
 
 		// create Placemark elements
-		for(int i =0;i<temp.size();i++)
-		{   Wifi point=new Wifi();
-		    point.Wififilterd(temp.get(i));
+		for(int i =0;i<kml_list.size();i++)
+		{  
+			kml_list.get(i).getLat();
 			 ////---------casting
-		   double hight=Double.valueOf(point.getHight());
-		   String id=point.getId();
-		   double lat=Double.valueOf(point.getLat());
-		   double lot=Double.valueOf(point.getLot());
-           String Time=createtimesrap(point.getTime());
+		 //  double hight=Double.valueOf(point.getHight());
+		   String id=kml_list.get(i).getId();
+		   double lat=Double.valueOf(kml_list.get(i).getLat());
+		   double lot=Double.valueOf(kml_list.get(i).getLot());
+           String Time=createtimesrap(kml_list.get(i).getTime());
 		createPlacemarkWithChart(doc, folder, lot, lat, id,1,Time);
 		}
 	   

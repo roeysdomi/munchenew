@@ -1,6 +1,8 @@
 package Algorithems;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import GUI.GUI2;
 import Wifi.Calc1parms;
 import Wifi.Wifi;
 
@@ -10,6 +12,7 @@ public class Calculate1 {
 	public ArrayList<Wifi> enterlist;
 	public ArrayList<Calc1parms> weightlist;
 	public ArrayList<Calc1parms> result;
+	public static String a1;
 	int algo2=0;;
 	
 /** 
@@ -17,14 +20,15 @@ public class Calculate1 {
  * 
  * @param list
  */
-
+public Calculate1()
+{}
 public Calculate1( ArrayList<Wifi> list)
 	{
 		this.enterlist=new ArrayList<>(list);
 		this.weightlist=new ArrayList<>();
 		this.result=new ArrayList<>();
 	}
-public void runCalculate1( )
+public void runCalculate1( ) throws IOException
 {  
 	/**
 	 * run all the procces
@@ -69,7 +73,7 @@ public void Creatweightlist()
 		weightlist.add(i,com);
 	}
 }
-public void createresult()
+public void createresult() throws IOException
 {    
 	/**
 	 * this function sums up al the lats ,lot,hight,
@@ -79,8 +83,10 @@ public void createresult()
      double sumlot=0;
      double sumhight=0;
      double sumweight=0;
-     Start a1=new Start();
-     int size=a1.limitmac;
+     //Start a1=new Start();
+    
+     int a2=Integer.valueOf(a1);
+     int size=a2;
      if(size>weightlist.size()) {size=weightlist.size();}
      
     

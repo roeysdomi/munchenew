@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Reads.Read;
 import Wifi.Wifi;
 
 
@@ -12,6 +13,7 @@ public class Filter {
 	
 	String path=System.getProperty("user.dir")+"\\tempfiles\\";
 	String csvpath=System.getProperty("user.dir")+"\\csv\\";
+	public ArrayList<Wifi> orgnized_list;
 	public ArrayList<Wifi> Filter_list_temp;
 	public  String  lat1;
 	public  String lot1;
@@ -30,13 +32,10 @@ public class Filter {
 	
 	
 	public void filterID() throws IOException
-	{   Filterfunc a1=new Filterfunc();
-		///---------write to---------
-		File file2=new File(path+"filterd.csv");
-		file2.createNewFile();
-		FileWriter writer=new FileWriter(file2);
-		///-----convert orgnized-----
-		a1.convertcsvtotxt("\\tempfiles\\orgnized");
+	{   Read re=new Read();
+	    re.setCsvfilename("orgnized");
+	    orgnized_list=new ArrayList<>(re.ReadOrgnized());
+	
 		//----------readfrom-------------
 		File file1=new File(path+"orgnized.txt");
 		Scanner sc=new Scanner(file1);
@@ -192,6 +191,7 @@ public class Filter {
 		sc.close();
 		writer.close();
 	}
+    
 ////-------get and set-------------
 	
 	

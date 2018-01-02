@@ -33,6 +33,22 @@ public class CompareWifi {
 	
 	 	
 	}
+	public boolean DeviceIDComperator(int i,int z)
+	{ 
+		/**
+		 * id comperator
+		 */
+	  
+	  if(
+	     listcomp.get(i).getDeviceid().equals(listcomp.get(z).getDeviceid())
+	    
+	    )
+	  {return true;}
+	  else 
+		  return false;
+	
+	 	
+	}
 	public boolean TimeComperator(int i,int z)
 	{ 
 	  /**

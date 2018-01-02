@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import Algorithems.Start;
+import GUI.GUI2;
 import Reads.Read;
 import Wifi.Wifi;
 import Write.WriteTxt3;
@@ -17,7 +18,8 @@ public class test {
 	public static void main(String[]args) throws IOException
 	{
 		/////-----מפה מריצים------
-	
+	    GUI2 roey=new GUI2();
+	   
 		System.out.println("star");
         Wifi wifi1=new Wifi();
         wifi1.setLat("32.103");

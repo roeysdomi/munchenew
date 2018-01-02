@@ -57,7 +57,7 @@ public WriteTxt4() throws IOException
 }
 public void WriteLiner() throws IOException
 {   int writecounter=0;
-	File file2 = new File(path+"\\OUTPUT\\"+"ALGO2_result.csv");
+	File file2 = new File(path+"\\tempfiles\\"+"ALGO2_result.csv");
     file2.createNewFile();
     FileWriter writer = new FileWriter(file2); 
 	double weight=1;

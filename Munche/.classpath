@@ -2,5 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="B:/KMLAPI/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="B:/KMLAPI/JavaAPIforKml-2.2.0.jar"/>
+	<classpathentry kind="lib" path="B:/KMLAPI/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="B:/KMLAPI/jaxb-impl-2.1.17.jar"/>
+	<classpathentry kind="lib" path="B:/KMLAPI/jsr173_api-1.0.jar"/>
+	<classpathentry kind="lib" path="jgoodies-common-1.8.0.jar" sourcepath="jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

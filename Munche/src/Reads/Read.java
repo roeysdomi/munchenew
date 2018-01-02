@@ -266,42 +266,85 @@ public class Read {
 		
 	}
 
-    public int[] ReadTocompare() throws IOException
-    {  int [] loc=new int [3];
-    	BufferedReader reader = new BufferedReader(new FileReader(	path+csvfilename+".csv"));
+    public ArrayList<Wifi> ReadOrgnized() throws IOException
+  
+    {
+    	BufferedReader reader = new BufferedReader(new FileReader(	path+"\\tempfiles\\"+csvfilename+".csv"));
 
 		// read file line by line
 		String line = null;
 		Scanner scanner = null;
 		int index = 0;
-		int countline=0;
+		int linecounter=1;
 		 ArrayList<Wifi>combcsv=new ArrayList<Wifi>();
         int counter=0;
-        double lat=0;
-		double lot=0;
-		double hight=0;
-		while ((line = reader.readLine()) != null&&!line.equals("")&&!line.contains("SSID")) 
-		{     countline++;
-		    Wifi wifi1=new Wifi();
-			String []g=line.split(",");
-			 lat=lat+Double.valueOf(g[0]);
-			 lot=lot+Double.valueOf(g[1]);
-			 hight=hight+Double.valueOf(g[2]);
-			
-		}
+        while((line = reader.readLine()) != null)
+        {
+				if (!line.equals("")&&!line.contains("SSID")&&!line.contains("WigleWifi-1.4")) 
+				{
+				    Wifi wifi1=new Wifi();
+					String []g=line.split(",");
+					int amount=Integer.valueOf(g[0]);
+					if(amount!=1)
+					{
+						
+						wifi1.setMac(g[1]);
+						wifi1.setSignal(g[4]);
+						wifi1.setId(g[2]);
+						wifi1.setTime(g[3]);
+						wifi1.setLat(g[5]);
+						wifi1.setLot(g[6]);
+						wifi1.sethight(g[7]);
+						wifi1.setLine(linecounter);
+						combcsv.add(counter++,wifi1);
+						
+						int z=0;
+						if(amount>10) {amount=10;}
+						for(int i=0;i<amount-1;i++)
+						{   Wifi wifi2=new Wifi();
+							wifi2.setMac(g[8+z]);
+							wifi2.setId(g[9+z]);
+							wifi2.setTime(g[10+z]);
+							wifi2.setSignal(g[11+z]);
+							wifi2.setLat(g[5]);
+							wifi2.setLot(g[6]);
+							wifi2.sethight(g[7]);
+							wifi2.setLine(linecounter);
+							combcsv.add(counter++,wifi2);
+							
+							z=z+7;
+							
+						}
+						
+						z=0;
+						
+						
+						
+					}
+					
+					if(amount==1)
+					{
+						wifi1.setMac(g[1]);
+						wifi1.setSignal(g[4]);
+						wifi1.setId(g[2]);
+						wifi1.setTime(g[3]);
+						wifi1.setLat(g[5]);
+						wifi1.setLot(g[6]);
+						wifi1.sethight(g[7]);
+						wifi1.setLine(linecounter);
+						combcsv.add(counter++,wifi1);
+					}
+					
+					linecounter++;
+				}
 		
-	    System.out.println(countline);
-		System.out.println(lat+","+lot+","+hight);
-		lat=lat/countline;
-		lot=lot/countline;
-		hight=hight/countline;
-		System.out.println(lat+","+lot+","+hight);
+         }
+		
 		reader.close();
-		return loc;
+		return combcsv;
 		
 	}
-
-	
+	/////------------new Read functions---------
 	
 	////-----get and set-----
 	public String getLoc() {
