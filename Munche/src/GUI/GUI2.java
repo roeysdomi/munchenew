@@ -65,6 +65,10 @@ import java.awt.SystemColor;
 
 public class GUI2 {
 	
+	
+	/**
+	 * gui function and run design from gui_design
+	 */
 	String type; 
 	String foldername;
 	boolean loadfiles=false;
@@ -106,9 +110,9 @@ public class GUI2 {
 	final TextField time_to = new TextField();
 	final TextField point1 = new TextField();
 	final TextField point2 = new TextField();
-	final TextField loadfiles_folder = new TextField();
+	final static TextField loadfiles_folder = new TextField();
 	final TextField wiglefiletext = new TextField();
-	final TextField folder_csv46 = new TextField();
+	final static  TextField folder_csv46 = new TextField();
 	final TextField file_csv46 = new TextField();
 	final TextField mac_algo1 = new TextField();
 	final TextField algo2_line = new TextField();
@@ -124,6 +128,7 @@ public class GUI2 {
 	//--------filter checkbox------------
 	final JRadioButton ortype = new JRadioButton("OR");
 	final JRadioButton andtype = new JRadioButton("AND");
+	final JRadioButton nottype = new JRadioButton("NOT");
 	final JRadioButton checkbox1 = new JRadioButton("");
 	final JRadioButton checkbox2 = new JRadioButton("");
 	final JRadioButton checkbox3 = new JRadioButton("");
@@ -140,19 +145,7 @@ public class GUI2 {
 		
 		ron.frame.setVisible(true);
 		
-		/*
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI2 window = new GUI2();
-					window.frame.setVisible(true);
-					checkfiles(obj);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		*/
+	
 	}
 
 	/**
@@ -162,6 +155,8 @@ public class GUI2 {
 	 */
 	public GUI2() {};
 	public void GUI21(GUI2 obj) throws IOException {
+		GUI_design gr=new GUI_design();
+		
 		Design();
 		Design2();
 		loadwigle(obj);
@@ -184,7 +179,7 @@ public class GUI2 {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	//--------DESGIN----
+	
 	public void Design2()
 	{
 		
@@ -473,26 +468,38 @@ public class GUI2 {
 		
 		
 		}
-	
 	///--------function----
     public void filtertype()
 	{
-		ortype.setBounds(140, 75, 49, 23);
+    	/**
+    	 * choose the filter type
+    	 */
+		ortype.setBounds(132, 75, 47, 23);
 		frame.getContentPane().add(ortype);
 		
+		nottype.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ortype.setSelected(false);
+				andtype.setSelected(false);
+				type="not";
+
+			}
+		});
 		andtype.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ortype.setSelected(false);
+				nottype.setSelected(false);
 				type="and";
 
 			}
 		});
-		andtype.setBounds(191, 75, 49, 23);
+		andtype.setBounds(183, 75, 49, 23);
 		frame.getContentPane().add(andtype);
 		////-------החלפה בין סוג הפילטר-----
 		ortype.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				andtype.setSelected(false);
+				nottype.setSelected(false);
 				type="or";
 				
 			}
@@ -501,6 +508,9 @@ public class GUI2 {
 	}
 	public void lunchbutton()
 	{
+		/**
+    	 * lunch the filters on the  currect data
+    	 */
 		lunch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(loadfiles)
@@ -536,7 +546,7 @@ public class GUI2 {
 				fe.setGetlist(listnow);	
 				if(ortype.isSelected()) {type="or";}
 				if(andtype.isSelected()) {type="and";}
-
+                if(nottype.isSelected()) {type="not";}
 				fe.setType(type);
 				textArea.append("Run filters /n");
 				textArea.setText(System.lineSeparator());
@@ -573,6 +583,9 @@ public class GUI2 {
 	}
 	public void loadwigle(final GUI2 obj)
 	{
+		/**
+    	 * load wigile format
+    	 */
 		btnLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(loadwigile==0&&load46col==0) {checkfiles(obj);}
@@ -607,6 +620,9 @@ public class GUI2 {
 	}
     public void goback()
     {
+    	/**
+    	 * bring back all the history
+    	 */
     	goback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//if()
@@ -618,8 +634,9 @@ public class GUI2 {
 					History sample=new History();
 					sample=his.returnlast();
 					templist=new ArrayList<>(sample.list);
-					if(sample.type.equals("or")) {andtype.setSelected(false);ortype.setSelected(true);type="or";}
-					if(sample.type.equals("and")) {ortype.setSelected(false);andtype.setSelected(true);type="and";}
+					if(sample.type.equals("or")) {andtype.setSelected(false);nottype.setSelected(false);ortype.setSelected(true);type="or";}
+					if(sample.type.equals("and")) {ortype.setSelected(false);nottype.setSelected(false);andtype.setSelected(true);type="and";}
+					if(sample.type.equals("not")) {{ortype.setSelected(false);nottype.setSelected(true);andtype.setSelected(false);type="not";}}
 					if(sample.choosenbox.contains("A")){checkbox1.setSelected(true);textid.setText(sample.getId());}
 					if(sample.choosenbox.contains("B"))
 					{
@@ -715,12 +732,18 @@ public class GUI2 {
     }
     public void status()
     {
+    	/**
+    	 * show the data status mac and wifi num
+    	 */
     	Count co=new Count();
     	MACNUM.setText(String.valueOf(co.countmacs(templist)));
     	WIFINUM.setText(String.valueOf(templist.size()));
     }
     public void reset()
     {   
+    	/**
+    	 * reset all
+    	 */
     	resetbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 		    	templist=new ArrayList<>();
@@ -734,6 +757,7 @@ public class GUI2 {
 		    	point2.setText("");
 		    	ortype.setSelected(false);
 		    	andtype.setSelected(false);
+		    	nottype.setSelected(false);
 		    	checkbox1.setSelected(false);
 		    	checkbox2.setSelected(false);
 		    	checkbox3.setSelected(false);
@@ -750,6 +774,9 @@ public class GUI2 {
     }
     public void resetandload()
     {
+    	/**
+    	 * resrt and load all
+    	 */
     	his=new History();
     	templist=new ArrayList<>();
     	counter=0;
@@ -760,6 +787,7 @@ public class GUI2 {
     	point2.setText("");
     	ortype.setSelected(false);
     	andtype.setSelected(false);
+    	nottype.setSelected(false);
     	checkbox1.setSelected(false);
     	checkbox2.setSelected(false);
     	checkbox3.setSelected(false);
@@ -812,6 +840,9 @@ public class GUI2 {
     }
     public void printlist()
     {
+    	/**
+    	 * print all the list
+    	 */
     	for(int i=0;i<templist.size();i++)
 		{
 			textArea.append(
@@ -827,6 +858,9 @@ public class GUI2 {
     }
     public void load46col(final GUI2 obj)
     {
+    	/**
+    	 * load 46col format
+    	 */
     	folder_csv46.setText("INPUT\\target\\");
 		file_csv46.setText("_comb_all_BM2_.csv");
 		load_csv46.addActionListener(new ActionListener() {
@@ -855,11 +889,17 @@ public class GUI2 {
 		frame.getContentPane().add(load_csv46);
 		
 		
+		nottype.setBounds(233, 75, 49, 23);
+		frame.getContentPane().add(nottype);
+		
+		
     	
     }
     public void savefilter() throws IOException
     {
-    	
+    	/**
+    	 * save the filter
+    	 */
     	savefilter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(counter==0) {textArea.append("\n YOU NEED TO LUNCH FIRST BEFORE \n SAVEING THE FILTER\n");}
@@ -882,6 +922,9 @@ public class GUI2 {
     }
     public void loadsavedfilter() throws IOException
     {
+    	/**
+    	 * load the filter
+    	 */
     	load_filter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Read4GUI re=new Read4GUI();
@@ -892,9 +935,9 @@ public class GUI2 {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		    	if(his.type.equals("or")) {ortype.setSelected(true);andtype.setSelected(false);}
-		    	if(his.type.equals("and")) {andtype.setSelected(true);ortype.setSelected(false);}
-		    	
+		    	if(his.type.equals("or")) {ortype.setSelected(true);andtype.setSelected(false);nottype.setSelected(false);}
+		    	if(his.type.equals("and")) {andtype.setSelected(true);ortype.setSelected(false);nottype.setSelected(false);}
+		    	if(his.type.equals("not")){andtype.setSelected(false);ortype.setSelected(false);nottype.setSelected(true);}
 		    	if(his.choosenbox.contains("A"))
 		    	{checkbox1.setSelected(true);textid.setText(his.id);}
 		    	if(his.choosenbox.contains("B"))
@@ -915,6 +958,9 @@ public class GUI2 {
     }
     public void saved46col()
     {
+    	/**
+    	 * save to 46 col format
+    	 */
     	save_csv46.addActionListener(new ActionListener() {
     		
 			public void actionPerformed(ActionEvent e) {
@@ -933,6 +979,9 @@ public class GUI2 {
     }
     public void savetokml()
     {
+    	/**
+    	 * save to kml format
+    	 */
     	savekml.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				WriteKml re=new WriteKml(templist);
@@ -949,7 +998,11 @@ public class GUI2 {
     	
     }
     public void lunchalgo1()
-    {   mac_algo1.setText("90:6c:ac:a0:3d:eb");
+    {  
+    	/**
+    	 * lunch algo1
+    	 */
+    	mac_algo1.setText("90:6c:ac:a0:3d:eb");
     	wifilimit.setText("5");
     	
     	lunch_algo1.addActionListener(new ActionListener() {
@@ -966,13 +1019,18 @@ public class GUI2 {
 					textArea.append("\n "+ re.resultalgo1+ "\n");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
+					
 					e1.printStackTrace();
 				}
 			}
 		});
     }
     public void lunchalgo2line()
-    {     algo2_line.setText("12/05/17 11:41 AM,model=SM-G950F_device=dreamlte,?,?,?,3,Guest,1c:b9:c4:15:ed:b8,3,-81,Guest,8c:0c:90:ae:16:83,3,-86,Guest,1c:b9:c4:16:ed:3c,3,-91");
+    {    
+    	/**
+    	 * lunch algo2 line
+    	 */
+    	algo2_line.setText("12/05/17 11:41 AM,model=SM-G950F_device=dreamlte,?,?,?,3,Guest,1c:b9:c4:15:ed:b8,3,-81,Guest,8c:0c:90:ae:16:83,3,-86,Guest,1c:b9:c4:16:ed:3c,3,-91");
           
     	lunch_aglo2_line.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -996,7 +1054,10 @@ public class GUI2 {
 		
     }
     public void lunchalgo2macs()
-    {    
+    {   
+    	/**
+    	 * lunch algo2 by macs
+    	 */
     	
     	algo2_sig_1.setText("-81");
     	algo2_mac_1.setText("1c:b9:c4:15:ed:b8");
@@ -1033,7 +1094,11 @@ public class GUI2 {
 		});
     }
     public void recountlines(ArrayList<Wifi> list)
-    {   int counter=1;
+    {  
+    	/**
+    	 * recount lines of data
+    	 */
+    	int counter=1;
         int remember=1;
         remember=templist.get(0).getLine();
     	for(int i=0;i<templist.size();i++)
@@ -1048,8 +1113,12 @@ public class GUI2 {
     }
     public static void checkfiles(GUI2 obj)
     {
+    	/**
+    	 * thread check files
+    	 */
     	
-    	checkfiles4GUI detectfiles=new checkfiles4GUI(path+"csv\\", path+"INPUT\\target\\",obj);
+    	
+    	checkfiles4GUI detectfiles=new checkfiles4GUI(path+"\\"+loadfiles_folder.getText() , path+folder_csv46.getText(),obj);
 		Thread dani=new Thread(detectfiles);
 		dani.start();
 		
