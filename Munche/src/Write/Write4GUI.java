@@ -17,6 +17,12 @@ import Wifi.Wifi;
 
 public class Write4GUI {
 	
+	
+	
+	/**
+		 * class that more adapt to the matala 3 requests
+		 * inlcude algo2 writing algo1 .
+		 */
 	String regpath=System.getProperty("user.dir")+"\\";
 	String path=System.getProperty("user.dir")+"\\tempfiles\\";
 	String csvpath=System.getProperty("user.dir")+"\\csv\\";
@@ -268,6 +274,7 @@ public class Write4GUI {
 		    //////------big file-----
 		    
 			int size=ListLiner.size();
+			if(size==0){return;}
 			 /////--------------- 
 			
 			for(int z=0;z<size;z++)
@@ -278,7 +285,7 @@ public class Write4GUI {
 	            
 	           if(ListLiner.get(z).getMac().equals(mac))
 	           {
-	        	   tempcount.add(ListLiner.get(z));System.out.println("yay");
+	        	   tempcount.add(ListLiner.get(z));
 	           }
 	             
 	            
@@ -327,8 +334,8 @@ public class Write4GUI {
 	     
 	     
 	     int x=enterlist.size();
-	     ListLiner=enterlist;
-
+	     ListLiner=new ArrayList<>(enterlist);
+         
 	  ///--------------------------------------
 	     
 	    
@@ -349,9 +356,9 @@ public class Write4GUI {
 		    	
 			    
 			     ///-----------
-				
+				if(result_mac.size()==0) {return;}
 		    		//writer.write(result_mac.get(0).getId()+","+result_mac.get(0).getMac()+","+result_mac.get(0).getLat()+","+result_mac.get(0).getLot()+","+result_mac.get(0).getHight());
-		    	   resultalgo1="||"+result_mac.get(0).getMac()+"||- "+result_mac.get(0).getLat()+" , "+result_mac.get(0).getLot()+" , "+result_mac.get(0).getHight()+" ||, "+result_mac.get(0).getId();
+		    	   resultalgo1= result_mac.get(0).getLat()+" , "+result_mac.get(0).getLot()+" , "+result_mac.get(0).getHight();
 					//writer.write(System.lineSeparator());
 		    	
 		    	
@@ -424,7 +431,11 @@ public class Write4GUI {
  		
  	}
  	public double createpie()
- 		{    double pie=1;
+ 		{ 
+            /**
+             * create the pie list		
+             */
+ 		 double pie=1;
  			 for(int j=0;j<temp_targetlist.size();j++)
  		      {
  			       int arraymac[]=checkline(j);
@@ -446,7 +457,11 @@ public class Write4GUI {
  			 return pie;
  		}
  	public void create_temp_target(int z)
- 	{     this.temp_targetlist=new ArrayList<>();
+ 	{   
+ 		/**
+ 		 * create temp list for target
+ 		 */
+ 		this.temp_targetlist=new ArrayList<>();
  	    
  		for(int i=0;i<targetlist.size();i++)
  		{
@@ -462,7 +477,11 @@ public class Write4GUI {
  		}
  	}
  	public void create_temp_training(int z)
- 	{     this.temp_traininglist=new ArrayList<>();
+ 	{   
+ 		/**
+ 		 * create temp list for training
+ 		 */
+ 		this.temp_traininglist=new ArrayList<>();
  		for(int i=0;i<traininglist.size();i++)
  		{
  			
@@ -478,6 +497,9 @@ public class Write4GUI {
  	}
  	public void setpie(double pie)
  	{
+ 		/**
+ 		 * cset pie
+ 		 */
  		for(int i=0;i<temp_traininglist.size();i++)
  		{  
  			temp_traininglist.get(i).setPie(pie);
@@ -485,7 +507,11 @@ public class Write4GUI {
  		
  	}
  	public int [] checkline(int z)
- 	{ int a[]=new int[0]; 
+ 	{ 
+ 		/**
+ 		 * check which line u r
+ 		 */
+ 		int a[]=new int[0]; 
  	   
  	   int countermacs=0;
  	   int counter=0;
