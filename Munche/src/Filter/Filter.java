@@ -25,7 +25,10 @@ public class Filter {
 	public  String minutes1;
 	public  String minutes2;
     
-	
+	/**
+	 * not in use thats why i dont document it..
+	 * @throws IOException
+	 */
 	
 	
    ///-------filter function----------

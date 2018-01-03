@@ -26,7 +26,11 @@ public class NewFilter {
 	public  String minutes2;
 	
 	
-	
+	/**
+	 * this is was test class which is were never in used
+	 * thats why i didnt document it.
+	 * 	 * @throws IOException
+	 */
 	
 	public void filterID() throws IOException
 	{   

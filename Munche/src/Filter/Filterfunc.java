@@ -13,6 +13,12 @@ public class Filterfunc {
 	String path=System.getProperty("user.dir")+"\\";
 	String csvpath=System.getProperty("user.dir")+"\\csv\\";
     
+	
+	
+	/**
+	 * this is the class that connect with the gui
+	 * he mange all the procces of the filters and choose how to work in every case.
+	 */
 
 	public ArrayList<Wifi> getlist;
 	
@@ -33,11 +39,14 @@ public class Filterfunc {
 		
 	public void statusbox(boolean check1,boolean check2,boolean check3)
 	{   
+		/**
+		 * set all the boxes
+		 */
 		
 		outlist=new ArrayList<>();
 		if(check1) {choosenbox="A";}
 		if(check2) {choosenbox="B";}
-		if(check2) {choosenbox="C";}
+		if(check3) {choosenbox="C";}
 		if(check1&&check2) {choosenbox="AB";}
 		if(check1&&check3) {choosenbox="AC";}
 		if(check2&&check3) {choosenbox="BC";}
@@ -46,12 +55,19 @@ public class Filterfunc {
 	}
 	public void runfilters()
 	{
+		/**
+		 * set type box
+		 */
 		if(type=="or") {filter_or();}
 		if(type=="and") {filter_and();}
-
+        if(type=="not") {filter_not();}
 	}
 	public void filter_and()
 	{
+		/*
+		 * 
+		 * filter and
+		 */
 		for(int i=0;i<getlist.size();i++)
 		{
 			if(choosenbox=="A") 
@@ -94,8 +110,58 @@ public class Filterfunc {
 			
 		}
 	}
+	public void filter_not()
+	{
+		/**
+ 		 * filter not
+ 		 */
+		for(int i=0;i<getlist.size();i++)
+		{
+			if(choosenbox=="A") 
+			{
+				if(!getlist.get(i).getDeviceid().contains(id)) {outlist.add(getlist.get(i));}
+				
+			}
+			if(choosenbox=="B") 
+			{
+				if(!checkTime(getlist.get(i).getTime())) {outlist.add(getlist.get(i));}
+				
+			}
+			if(choosenbox=="C") 
+			{
+				if(!checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
+				
+			}
+			
+			if(choosenbox=="AB")
+			{
+				if(!getlist.get(i).getDeviceid().contains(id)&&!checkTime(getlist.get(i).getTime())) {outlist.add(getlist.get(i));}
+			}
+			
+			if(choosenbox=="AC")
+			{
+				if(!getlist.get(i).getDeviceid().contains(id)&&!checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
+			}
+			
+			if(choosenbox=="BC")
+			{
+				if(!checkTime(getlist.get(i).getTime())&&!checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
+			}
+			if(choosenbox=="ABC")
+			{
+				if(!getlist.get(i).getDeviceid().contains(id)&&!checkTime(getlist.get(i).getTime())&&!checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
+			}
+			
+			
+			
+			
+		}
+	}
 	public void filter_or()
 	{
+		/**
+ 		 * filteror
+ 		 */
 		for(int i=0;i<getlist.size();i++)
 		{
 			if(choosenbox=="A") 
@@ -141,6 +207,9 @@ public class Filterfunc {
 	
 	public History createhistory()
 	{
+		/**
+ 		 * create the history based to the filterfunc
+ 		 */
 		History sample=new History();
 		sample.setType(type);
 		sample.setList(outlist);
