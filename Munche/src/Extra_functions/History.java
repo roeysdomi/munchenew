@@ -6,7 +6,10 @@ import Wifi.Wifi;
 public class History {
 	
 	
-	
+	/**
+	 * this is is linked list based idea which help us to go
+	 * back and load the previous content .
+	 */
 	public ArrayList<Wifi> list;
 	public History next;
 	public History head;
@@ -36,6 +39,10 @@ public class History {
    public void add2history(History sample)
    
    {
+	   
+	    /**
+	     * add to the histoy
+	     */
 	   if(head==null)
 	   {
 		   head=sample;
@@ -63,6 +70,9 @@ public class History {
    }
    public History returnlast()
    {
+	   /**
+	    * return the last history
+	    */
 	   History currect=head;
 	   while(currect.next!=null)
 	   {
@@ -72,6 +82,9 @@ public class History {
    }
    public History deletelast()
    {
+	   /**
+	    * delete the last history
+	    */
 	   History currect=head;
 	   while(currect.next.next!=null)
 	   {
