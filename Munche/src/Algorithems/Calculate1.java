@@ -33,8 +33,12 @@ public void runCalculate1( ) throws IOException
 	/**
 	 * run all the procces
 	 */
-	Creatweightlist();
-	createresult();
+	
+	if(enterlist.size()!=0)
+	{
+		Creatweightlist();
+	   createresult();
+	}
 }
 
 public void Creatweightlist()

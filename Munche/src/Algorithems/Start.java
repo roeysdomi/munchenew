@@ -19,7 +19,12 @@ public class Start {
 	public static Boolean failtesting=true;
 	
 	
-	
+	/**
+	 * not in use anymore 
+	 * this was the class that run everything
+	 * in matala0 and 1.
+	 * @throws IOException
+	 */
 	
 	public void Start() throws IOException
 	{
