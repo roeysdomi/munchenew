@@ -26,8 +26,6 @@ public class Filter {
 	public  String minutes2;
     
 	/**
-	 * not in use thats why i dont document it..
-	 * @throws IOException
 	 */
 	
 	
