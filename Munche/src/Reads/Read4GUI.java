@@ -26,7 +26,7 @@ public class Read4GUI  extends Read {
 		File folder = new File(path+"\\"+g);
 		File[] listOfFiles = folder.listFiles();
 		ArrayList<Wifi> listout=new ArrayList<>();
-		
+		int counter=1;
 			for (File file : listOfFiles)
 			{
 			
@@ -46,6 +46,7 @@ public class Read4GUI  extends Read {
 			      				{
 			                        Wifi wifi1=new Wifi(line);
 			                        wifi1.deviceid=deviceid1;
+			                        wifi1.setLine(counter++);
 			                        listout.add(wifi1);
 			                        
 			      				}
@@ -258,17 +259,19 @@ public class Read4GUI  extends Read {
 		while ((line = reader.readLine()) != null)
 		{
 			String []split=line.split(",");
-			sample.choosenbox=split[0];
-			sample.type=split[1];
-			sample.id=split[2];
-			sample.hours1=split[3];
-			sample.minutes1=split[4];
-			sample.hours2=split[5];
-			sample.minutes2=split[6];
-			sample.lat1=split[7];
-			sample.lot1=split[8];
+			
+			sample.type=split[0];
+			sample.id=split[1];
+			sample.hours1=split[2];
+			sample.minutes1=split[3];
+			sample.hours2=split[4];
+			sample.minutes2=split[5];
+			sample.lat1=split[6];
+			sample.lot1=split[7];
+			sample.hight1=split[8];
 			sample.lat2=split[9];
 			sample.lot2=split[10];
+			sample.hight2=split[11];
 			
 
 

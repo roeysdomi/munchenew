@@ -13,17 +13,24 @@ public class Filterfunc {
 	String path=System.getProperty("user.dir")+"\\";
 	String csvpath=System.getProperty("user.dir")+"\\csv\\";
     
+	
+	
+	/**
+	 * this is the class that connect with the gui
+	 * he mange all the procces of the filters and choose how to work in every case.
+	 */
 
 	public ArrayList<Wifi> getlist;
 	
 	public ArrayList<Wifi> outlist;
 
 	public String type;
-	public String choosenbox;
 	public  String  lat1;
 	public  String lot1;
 	public  String  lat2;
 	public  String lot2;
+	public  String  hight1;
+	public  String hight2;
 	public  String id;
 	public  String hours1;
 	public  String hours2;
@@ -31,109 +38,116 @@ public class Filterfunc {
 	public  String minutes2;
 ////-------function helper for filter-----
 		
-	public void statusbox(boolean check1,boolean check2,boolean check3)
+	public void statusbox(String t)
 	{   
+		/**
+		 * set all the boxes
+		 */
 		
 		outlist=new ArrayList<>();
-		if(check1) {choosenbox="A";}
-		if(check2) {choosenbox="B";}
-		if(check2) {choosenbox="C";}
-		if(check1&&check2) {choosenbox="AB";}
-		if(check1&&check3) {choosenbox="AC";}
-		if(check2&&check3) {choosenbox="BC";}
-		if(check1&&check2&check3) {choosenbox="ABC";}
+		type=t;
 		
 	}
 	public void runfilters()
 	{
-		if(type=="or") {filter_or();}
-		if(type=="and") {filter_and();}
-
+		/**
+		 * set type box
+		 */
+		if(type.contains("$")) {filter_or();}
+		if(type.contains("&")) {filter_and();}
+      
 	}
 	public void filter_and()
 	{
+		/*
+		 * 
+		 * filter and
+		 */
+		
+		String choosenbox[]=type.split("&");
 		for(int i=0;i<getlist.size();i++)
 		{
-			if(choosenbox=="A") 
+			int counter=0;
+			if(choosenbox[0].equals("A")||choosenbox[1].equals("A")) 
 			{
-				if(getlist.get(i).getDeviceid().contains(id)) {outlist.add(getlist.get(i));}
+				if(getlist.get(i).getDeviceid().contains(id)) {counter++;;}
 				
 			}
-			if(choosenbox=="B") 
+			if(choosenbox[0].equals("XA")||choosenbox[1].equals("XA")) 
 			{
-				if(checkTime(getlist.get(i).getTime())) {outlist.add(getlist.get(i));}
+				if(!getlist.get(i).getDeviceid().contains(id)) {counter++;;}
 				
 			}
-			if(choosenbox=="C") 
+			if(choosenbox[0].equals("B")||choosenbox[1].equals("B")) 
 			{
-				if(checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
+				if(checkTime(getlist.get(i).getTime())) {counter++;}
+				
+			}
+			if(choosenbox[0].equals("XB")||choosenbox[1].equals("XB")) 
+			{
+				if(!checkTime(getlist.get(i).getTime())) {counter++;}
+				
+			}
+			if(choosenbox[0].equals("C")||choosenbox[1].equals("C")) 
+			{
+				if(checklocation(getlist.get(i).getLot(), getlist.get(i).getLat(),getlist.get(i).getHight())) {counter++;}
+				
+			}
+			if(choosenbox[0].equals("XC")||choosenbox[1].equals("XC")) 
+			{
+				if(!checklocation(getlist.get(i).getLot(), getlist.get(i).getLat(),getlist.get(i).getHight())) {counter++;}
 				
 			}
 			
-			if(choosenbox=="AB")
-			{
-				if(getlist.get(i).getDeviceid().contains(id)&&checkTime(getlist.get(i).getTime())) {outlist.add(getlist.get(i));}
-			}
 			
-			if(choosenbox=="AC")
-			{
-				if(getlist.get(i).getDeviceid().contains(id)&&checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
-			}
-			
-			if(choosenbox=="BC")
-			{
-				if(checkTime(getlist.get(i).getTime())&&checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
-			}
-			if(choosenbox=="ABC")
-			{
-				if(getlist.get(i).getDeviceid().contains(id)&&checkTime(getlist.get(i).getTime())&&checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
-			}
-			
-			
+			if(counter==2) {outlist.add(getlist.get(i));}
 			
 			
 		}
 	}
+	
 	public void filter_or()
 	{
+		/**
+ 		 * filteror
+ 		 */
+		String choosenbox[]=type.split("\\$");
 		for(int i=0;i<getlist.size();i++)
 		{
-			if(choosenbox=="A") 
+			int counter=0;
+			if(choosenbox[0].equals("A")||choosenbox[1].equals("A")) 
 			{
-				if(getlist.get(i).getDeviceid().contains(id)) {outlist.add(getlist.get(i));}
+				if(getlist.get(i).getDeviceid().contains(id)) {counter++;;}
 				
 			}
-			if(choosenbox=="B") 
+			if(choosenbox[0].equals("XA")||choosenbox[1].equals("XA")) 
 			{
-				if(checkTime(getlist.get(i).getTime())) {outlist.add(getlist.get(i));}
+				if(!getlist.get(i).getDeviceid().contains(id)) {counter++;;}
 				
 			}
-			if(choosenbox=="C") 
+			if(choosenbox[0].equals("B")||choosenbox[1].equals("B")) 
 			{
-				if(checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
+				if(checkTime(getlist.get(i).getTime())) {counter++;}
+				
+			}
+			if(choosenbox[0].equals("XB")||choosenbox[1].equals("XB")) 
+			{
+				if(!checkTime(getlist.get(i).getTime())) {counter++;}
+				
+			}
+			if(choosenbox[0].equals("C")||choosenbox[1].equals("C")) 
+			{
+				if(checklocation(getlist.get(i).getLot(), getlist.get(i).getLat(),getlist.get(i).getHight())) {counter++;}
+				
+			}
+			if(choosenbox[0].equals("XC")||choosenbox[1].equals("XC")) 
+			{
+				if(!checklocation(getlist.get(i).getLot(), getlist.get(i).getLat(),getlist.get(i).getHight())) {counter++;}
 				
 			}
 			
-			if(choosenbox=="AB")
-			{
-				if(getlist.get(i).getDeviceid().contains(id)||checkTime(getlist.get(i).getTime())) {outlist.add(getlist.get(i));}
-			}
 			
-			if(choosenbox=="AC")
-			{
-				if(getlist.get(i).getDeviceid().contains(id)||checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
-			}
-			
-			if(choosenbox=="BC")
-			{
-				if(checkTime(getlist.get(i).getTime())||checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
-			}
-			if(choosenbox=="ABC")
-			{
-				if(getlist.get(i).getDeviceid().contains(id)||checkTime(getlist.get(i).getTime())||checklocation(getlist.get(i).getLot(), getlist.get(i).getLat())) {outlist.add(getlist.get(i));}
-			}
-			
-			
+			if(counter>=1) {outlist.add(getlist.get(i));}
 			
 			
 		}
@@ -141,6 +155,9 @@ public class Filterfunc {
 	
 	public History createhistory()
 	{
+		/**
+ 		 * create the history based to the filterfunc
+ 		 */
 		History sample=new History();
 		sample.setType(type);
 		sample.setList(outlist);
@@ -151,9 +168,11 @@ public class Filterfunc {
 		sample.setId(id);
 		sample.setLat1(lat1);
 		sample.setLot1(lot1);
+		sample.hight1=(hight1);
 		sample.setLat2(lat2);
 		sample.setLot2(lot2);
-		sample.choosenbox=choosenbox;
+		sample.hight2=(hight2);
+
 		return sample;
 	}
 ////------filters----	
@@ -189,21 +208,28 @@ public class Filterfunc {
     
     
     }
-	public boolean checklocation(String lot3,String lat3)
+	public boolean checklocation(String lot3,String lat3,String hight3)
 	  {
 	    boolean a=true;
 	    ////------הגדרת משתנים
 	    double xlat1=Double.valueOf(lat1);
 	    double xlot1=Double.valueOf(lot1);
+	    double xhight1=Double.valueOf(hight1);
 	    double xlat2=Double.valueOf(lat2);
 	    double xlot2=Double.valueOf(lot2);
+	    double xhight2=Double.valueOf(hight2);
 	    double xlat3=Double.valueOf(lat3);
 	    double xlot3=Double.valueOf(lot3);
+	    double xhight3=Double.valueOf(hight3);
+
 	    /////--------------בדיקה
 	    if((xlat1<=xlat3&&xlat3<=xlat2)||(xlat2<=xlat3&&xlat3<=xlat1)){a=true;}
 	    else
 	    {return false;};
 	    if((xlot1<=xlot3&&xlot3<=xlot2)||(xlot2<=xlot3&&xlot3<=xlot1)){a=true;}
+	    else
+	    {return false;};
+	    if((xhight1<=xhight3&&xhight3<=xhight2)||(xhight2<=xhight3&&xhight3<=xhight1)){a=true;}
 	    else
 	    {return false;};
 
@@ -232,13 +258,14 @@ public class Filterfunc {
 		String []split=g.split(",");
 		lat1=new String(split[0]);
 		lot1=new String(split[1]);
-		
+	    hight1=new String(split[2]);
 	}
 	public void setpoint2(String g)
 	{
 		String []split=g.split(",");
 		lat2=new String(split[0]);
 		lot2=new String(split[1]);
+		hight2=new String(split[2]);
 	}
 	public ArrayList<Wifi> getGetlist() {
 		return getlist;
