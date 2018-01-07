@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import Extra_functions.History;
 import Wifi.Wifi;
+/* class that read the data .like the Read clas but more adapt to matala3*/
 
 public class Read4GUI  extends Read {
 	String path=System.getProperty("user.dir")+"\\";
