@@ -65,6 +65,10 @@ public  class Checkdb4GUI implements Runnable  {
 	}
     public static String readlastdate()
     {
+    	/**
+		 * check last date
+		 */
+   
     	String date="";
     	Statement st = null;
         ResultSet rs = null;

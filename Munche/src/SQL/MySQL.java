@@ -44,7 +44,7 @@ public class MySQL {
      public static ArrayList<Wifi>  AddData(ArrayList<Wifi> enterlist) {
     	
     	/**
-    	 * read from the data base and add to the currect list
+    	 * read from the data base and add to the currect list..
     	 */
         Statement st = null;
         ResultSet rs = null;
