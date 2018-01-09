@@ -19,6 +19,7 @@ import Extra_functions.Count;
 import Extra_functions.History;
 import Filter.Filterfunc;
 import Reads.Read4GUI;
+import SQL.MySQL;
 import Wifi.Wifi;
 import Write.Write4GUI;
 import Write.WriteKml;
@@ -72,10 +73,12 @@ public class GUI2 {
 	 */
 	String type; 
 	String foldername;
+	public static GUI2 obj1;
 	boolean loadfiles=false;
 	int startwith =0; 
 	public static int loadwigile=0;
 	public static int load46col=0;
+	public static int loaddb=0;
 	public ArrayList<Wifi> templist=new ArrayList<>();
     public String line4algo2;
     public int counter=0;
@@ -103,6 +106,7 @@ public class GUI2 {
 	final JButton lunch_algo1 = new JButton("Lunch!");
 	final JButton lunch_aglo2_line = new JButton("Lunch!");
 	final JButton algo2_lunch_macs = new JButton("Lunch!");
+	final JButton load_db = new JButton("Add+");
 
 	
 	
@@ -127,6 +131,10 @@ public class GUI2 {
 	public final static TextField wifilimit = new TextField();
 	final TextField FILTER1 = new TextField();
 	final TextField FILTER2 = new TextField();
+	final TextField db_user = new TextField("oop2");
+	final TextField db_passw = new TextField("Lambda2();");
+	final TextField db_ip = new TextField("5.29.193.52");
+	final TextField db_port = new TextField("3306");
 
 	//--------filter checkbox------------
 	final JRadioButton ortype = new JRadioButton("OR");
@@ -143,6 +151,7 @@ public class GUI2 {
 	 */
 	public static void main(String[] args) throws IOException {
 		GUI2 ron = new GUI2();
+		ron.obj1=ron;
 		ron.GUI21(ron);
 		
 		ron.frame.setVisible(true);
@@ -174,7 +183,8 @@ public class GUI2 {
 		lunchalgo1();
 		lunchalgo2line();
 		lunchalgo2macs();
-		checkfiles( obj);
+		
+		loaddatabase(obj);
 		
 	}
     
@@ -207,8 +217,14 @@ public class GUI2 {
 		JSeparator separator4 = new JSeparator();
 		separator4.setOrientation(SwingConstants.VERTICAL);
 		separator4.setForeground(new Color(192, 192, 192));
-		separator4.setBounds(463, 169, 8, 191);
+		separator4.setBounds(518, 192, 8, 167);
 		frame.getContentPane().add(separator4);
+		
+		JSeparator separator5 = new JSeparator();
+		separator5.setOrientation(SwingConstants.VERTICAL);
+		separator5.setForeground(new Color(192, 192, 192));
+		separator5.setBounds(623, 169, 8, 191);
+		frame.getContentPane().add(separator5);
 		
 		JLabel lblType = DefaultComponentFactory.getInstance().createLabel("Type:");
 		lblType.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -239,15 +255,15 @@ public class GUI2 {
 		separator_7.setBounds(0, 33, 128, 14);
 		frame.getContentPane().add(separator_7);
 		JSeparator separator_8 = new JSeparator();
-		separator_8.setBounds(0, 364, 742, 14);
+		separator_8.setBounds(0, 364, 814, 14);
 		frame.getContentPane().add(separator_8);
 		
 		JSeparator separator_9 = new JSeparator();
-		separator_9.setBounds(0, 412, 624, 4);
+		separator_9.setBounds(0, 412, 814, 4);
 		frame.getContentPane().add(separator_9);
 		
 		JSeparator separator_10 = new JSeparator();
-		separator_10.setBounds(0, 441, 742, 14);
+		separator_10.setBounds(0, 441, 814, 14);
 		frame.getContentPane().add(separator_10);
 		
 		JLabel lblLoadFiles = DefaultComponentFactory.getInstance().createLabel("LOAD FILES :");
@@ -259,7 +275,7 @@ public class GUI2 {
 		
 		JLabel lblLog = DefaultComponentFactory.getInstance().createLabel("LOG:");
 		lblLog.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblLog.setBounds(445, 0, 58, 23);
+		lblLog.setBounds(402, 1, 58, 23);
 		frame.getContentPane().add(lblLog);
 		
 		JSeparator separator_5 = new JSeparator();
@@ -301,13 +317,13 @@ public class GUI2 {
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.control);
-		frame.setBounds(100, 100, 768, 649);
+		frame.setBounds(100, 100, 840, 649);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		textArea.setBounds(445, 26, 285, 132);
 		frame.getContentPane().add(textArea);
 		JScrollPane scrollPane = new JScrollPane(textArea);
-		scrollPane.setBounds(402, 26, 340, 132);
+		scrollPane.setBounds(402, 26, 412, 132);
 		frame.getContentPane().add(scrollPane);
 		
 		
@@ -653,13 +669,38 @@ public class GUI2 {
 		frame.getContentPane().add(wiglefiletext);
 		
 		
-		resetbutton.setBounds(518, 0, 212, 24);
+		resetbutton.setBounds(602, 0, 212, 24);
 		frame.getContentPane().add(resetbutton);
 		
 		JLabel lblCsvCo = DefaultComponentFactory.getInstance().createLabel("csv (46 col Format)");
 		lblCsvCo.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblCsvCo.setBounds(256, 193, 116, 20);
+		lblCsvCo.setBounds(256, 193, 102, 20);
 		frame.getContentPane().add(lblCsvCo);
+		
+		JLabel lbldb = DefaultComponentFactory.getInstance().createLabel("Data base:");
+		lbldb.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		lbldb.setBounds(367, 193, 116, 20);
+		frame.getContentPane().add(lbldb);
+		
+		JLabel dbuser = DefaultComponentFactory.getInstance().createLabel("user:");
+		dbuser.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		dbuser.setBounds(375, 220, 35, 20);
+		frame.getContentPane().add(dbuser);
+		
+		JLabel dbip = DefaultComponentFactory.getInstance().createLabel("ip:");
+		dbip.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		dbip.setBounds(375, 270, 31, 20);
+		frame.getContentPane().add(dbip);
+		
+		JLabel dbpass = DefaultComponentFactory.getInstance().createLabel("pass:");
+		dbpass.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		dbpass.setBounds(374, 244, 36, 20);
+		frame.getContentPane().add(dbpass);
+		
+		JLabel dbport = DefaultComponentFactory.getInstance().createLabel("port:");
+		dbport.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		dbport.setBounds(375, 295, 40, 20);
+		frame.getContentPane().add(dbport);
 		
 		folder_csv46.setBounds(266, 233, 84, 20);
 		frame.getContentPane().add(folder_csv46);
@@ -682,25 +723,25 @@ public class GUI2 {
 		
 		
 		
-		load_filter.setBounds(369, 192, 84, 154);
+		load_filter.setBounds(532, 193, 84, 154);
 		frame.getContentPane().add(load_filter);
 		
 		JLabel lblSaveFile = new JLabel("SAVE FILE:");
 		lblSaveFile.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblSaveFile.setBounds(469, 174, 78, 14);
+		lblSaveFile.setBounds(641, 169, 78, 14);
 		frame.getContentPane().add(lblSaveFile);
 		
 		
-		savefilter.setBounds(473, 199, 257, 39);
+		savefilter.setBounds(641, 199, 160, 39);
 		frame.getContentPane().add(savefilter);
 		
 		
-		save_csv46.setBounds(472, 244, 258, 43);
+		save_csv46.setBounds(641, 248, 160, 43);
 		frame.getContentPane().add(save_csv46);
 		
 		
 		
-		savekml.setBounds(473, 299, 257, 40);
+		savekml.setBounds(641, 307, 160, 40);
 		frame.getContentPane().add(savekml);
     	
     }
@@ -739,6 +780,7 @@ public class GUI2 {
 		    	counter=0;
 		    	loadwigile=0;
 		    	load46col=0;
+		    	loaddb=0;
 		    	FILTER1.setText("");
 		    	FILTER2.setText("");
 
@@ -808,8 +850,22 @@ public class GUI2 {
 			}
 			status();
     	}
+    	if(loaddb==1)
+    	{
+    		loadfiles=true;
+			MySQL sq=new MySQL();
+			sq._ip=db_ip.getText();
+			sq._password=db_passw.getText();
+			sq._port=db_port.getText();
+			sq._user=db_user.getText();
+			sq._url="jdbc:mysql://"+sq._ip+":"+sq._port+"/oop_course_ariel";
+	    	templist=sq.AddData(templist);
+	    	
+	    	
+    	}
     	textArea.setText("");
     	printlist();
+    	status();
     	textArea.append("\n  FILES WERE REALOADED !\n");
 
     }
@@ -890,6 +946,23 @@ public class GUI2 {
 		JLabel lblForLocationEnter = DefaultComponentFactory.getInstance().createLabel("for location enter \"C\"");
 		lblForLocationEnter.setBounds(274, 42, 128, 14);
 		frame.getContentPane().add(lblForLocationEnter);
+		
+		db_user.setBounds(425, 219, 88, 19);
+		frame.getContentPane().add(db_user);
+		
+
+		db_passw.setBounds(425, 244, 88, 19);
+		frame.getContentPane().add(db_passw);
+		
+		db_ip.setBounds(425, 270, 88, 19);
+		frame.getContentPane().add(db_ip);
+		
+		db_port.setBounds(425, 295, 88, 19);
+		frame.getContentPane().add(db_port);
+		
+		
+		load_db.setBounds(375, 320, 89, 33);
+		frame.getContentPane().add(load_db);
 		
 		
     	
@@ -1107,6 +1180,9 @@ public class GUI2 {
     	checkfiles4GUI detectfiles=new checkfiles4GUI(path+"\\"+loadfiles_folder.getText() , path+folder_csv46.getText(),obj);
 		Thread dani=new Thread(detectfiles);
 		dani.start();
+		Checkdb4GUI detectfilesdb=new Checkdb4GUI(obj);
+		Thread yosi=new Thread(detectfilesdb);
+		yosi.start();
 		
 		
     }
@@ -1162,6 +1238,30 @@ public class GUI2 {
     	if(!split[1].contains("X")) {not2.setSelected(false);}
     	
     }
+    public void loaddatabase(final GUI2 obj)
+    {
+    	/**
+    	 * load the data base
+    	 */
+    	load_db.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				loaddb=1;
+				loadfiles=true;
+				MySQL sq=new MySQL(obj);
+				sq._ip=db_ip.getText();
+				sq._password=db_passw.getText();
+				sq._port=db_port.getText();
+				sq._user=db_user.getText();
+				sq._url="jdbc:mysql://"+sq._ip+":"+sq._port+"/oop_course_ariel";
+		    	templist=sq.AddData(templist);
+		    	printlist();
+		    	status();
+		    	checkfiles(obj1);
+			}
+		});
+    	
+    }
+
 }
 
 
