@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Wifi.Wifi;
-
+/**
+ * this is class is not in use anymore therfor i didnt document it
+ * @author רואי סדומי
+ *
+ */
 
 public class Read {
 	String path=System.getProperty("user.dir")+"\\";

@@ -36,7 +36,7 @@ public class Filter {
 	{   Read re=new Read();
 	    re.setCsvfilename("orgnized");
 	    orgnized_list=new ArrayList<>(re.ReadOrgnized());
-	
+	    
 		//----------readfrom-------------
 		File file1=new File(path+"orgnized.txt");
 		Scanner sc=new Scanner(file1);
@@ -52,15 +52,12 @@ public class Filter {
 				int counter=0;
 				for(int i=0;i<rows;i++)
 				{
-					writer.write(words[i+1]+",");counter++;
-					
-					if(counter==7){writer.write(System.lineSeparator());counter=0;}				
+							
 					
 				}
 			}
 		}
 		sc.close();
-		writer.close();
 	}	
     public void filterTime() throws IOException
 	{   Filterfunc a1=new Filterfunc();
@@ -70,7 +67,6 @@ public class Filter {
 		file2.createNewFile();
 		FileWriter writer=new FileWriter(file2);
 		///-----convert orgnized-----
-		a1.convertcsvtotxt("orgnized");
 		//----------readfrom-------------
 		File file1=new File(path+"orgnized.txt");
 		Scanner sc=new Scanner(file1);
@@ -162,7 +158,6 @@ public class Filter {
 		file2.createNewFile();
 		FileWriter writer=new FileWriter(file2);
 		///-----convert orgnized-----
-		a1.convertcsvtotxt("orgnized");
 		//----------readfrom-------------
 		File file1=new File(path+"orgnized.txt");
 		Scanner sc=new Scanner(file1);

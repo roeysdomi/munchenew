@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Junit_tests.Checkcontent" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-01-18T02:47:04" hostname="DESKTOP-B33RPA8" time="0.244">
+  <properties/>
+  <testcase name="test" classname="Junit_tests.Checkcontent" time="0.244"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

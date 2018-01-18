@@ -16,6 +16,8 @@ import javax.swing.JProgressBar;
 import Extra_functions.Count;
 import Extra_functions.History;
 import Filter.Filterfunc;
+import GUI.Checkdb4GUI;
+import GUI.checkfiles4GUI;
 import Reads.Read4GUI;
 import SQL.MySQL;
 

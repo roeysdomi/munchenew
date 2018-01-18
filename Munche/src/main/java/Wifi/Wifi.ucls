@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="Wifi.Calc1parms" project="Munche" file="/Munche/src/Wifi/Calc1parms.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="217" y="124"/>    
+  <class id="1" language="java" name="Wifi.Calc1parms" project="Munche" 
+    file="/Munche/src/main/java/Wifi/Calc1parms.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="137" x="279" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="Wifi.Location" project="Munche" file="/Munche/src/Wifi/Location.java" 
+  <class id="2" language="java" name="Wifi.Location" project="Munche" file="/Munche/src/main/java/Wifi/Location.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="124" x="579" y="1337"/>    
+    <position height="243" width="124" x="41" y="1467"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="Wifi.CompareWifi" project="Munche" file="/Munche/src/Wifi/CompareWifi.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="423" y="19"/>    
+  <class id="3" language="java" name="Wifi.CompareWifi" project="Munche" 
+    file="/Munche/src/main/java/Wifi/CompareWifi.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="198" x="41" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="Wifi.Wifi" project="Munche" file="/Munche/src/Wifi/Wifi.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="718" y="359"/>    
+  <class id="4" language="java" name="Wifi.Wifi" project="Munche" file="/Munche/src/main/java/Wifi/Wifi.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="909" width="192" x="41" y="518"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

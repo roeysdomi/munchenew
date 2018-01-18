@@ -11,7 +11,9 @@ import java.util.Scanner;
 
 import Extra_functions.History;
 import Wifi.Wifi;
-/* class that read the data .like the Read clas but more adapt to matala3*/
+/** 
+ * class that read the data .like the Read clas but more adapt to matala3*/
+
 
 public class Read4GUI  extends Read {
 	String path=System.getProperty("user.dir")+"\\";
@@ -23,7 +25,8 @@ public class Read4GUI  extends Read {
 	
 	public ArrayList<Wifi> Readwigles(ArrayList<Wifi> listenter,String g) throws IOException
 	{
-		/*read wigile format*/
+		/**
+		 * read wigile format*/
 		
 		File folder = new File(path+"\\"+g);
 		File[] listOfFiles = folder.listFiles();
@@ -69,7 +72,8 @@ public class Read4GUI  extends Read {
 	}
 	public ArrayList<Wifi> Read_1_wigles(ArrayList<Wifi> listenter ,String folder,String filename) throws IOException
 	{
-				/*read wigile single format*/
+				/**
+				 * read wigile single format*/
 
 		
 		ArrayList<Wifi> listout=new ArrayList<>();
@@ -107,7 +111,7 @@ public class Read4GUI  extends Read {
 	}
 	public ArrayList<Wifi> ReadeCombCsv(ArrayList<Wifi> listenter ,String folder,String filename) throws IOException
     {
-				/*read 46col format*/
+				/**read 46col format*/
 
     	BufferedReader reader = new BufferedReader(new FileReader(	path+"\\"+folder+"\\"+filename));
 
@@ -196,7 +200,7 @@ public class Read4GUI  extends Read {
 	}
 	 public ArrayList<Wifi> ReadeNoGPSCsv(String line) throws IOException
 	    {
-		 		/*read nogps format*/
+		 		/**read nogps format*/
 
 	    	
 			int countline=1;
@@ -254,7 +258,7 @@ public class Read4GUI  extends Read {
 		}
 	public History Readsavedfilter(History sample) throws IOException
 	{
-				/*read saved filter format*/
+				/**read saved filter format*/
 
 		BufferedReader reader = new BufferedReader(new FileReader(path+"\\OUTPUT\\SAVEDFILTER.csv"));
 

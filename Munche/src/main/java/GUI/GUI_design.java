@@ -216,16 +216,7 @@ public class GUI_design extends GUI2 {
 
 		
 		
-		checkbox1.setBounds(45, 79, 29, 14);
-		frame.getContentPane().add(checkbox1);
-		checkbox2.setBackground(UIManager.getColor("Button.background"));
-		//-------בחירת זמן
-		checkbox2.setBounds(104, 153, 18, 23);
-		frame.getContentPane().add(checkbox2);
-		//----------בחירת מיקום
 		
-		checkbox3.setBounds(70, 258, 23, 23);
-		frame.getContentPane().add(checkbox3);
 		MACNUM.setBounds(175, 10, 72, 23);
 		frame.getContentPane().add(MACNUM);
 		WIFINUM.setBounds(200, 36, 68, 11);
