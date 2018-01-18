@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {     mavenCentral()   }
+dependencies {     implementation 'org.xerial:sqlite-jdbc:+'   }
+// https://mvnrepository.com/artifact/de.micromata.jak/JavaAPIforKml
+dependencies{
+	compile group: 'de.micromata.jak', name: 'JavaAPIforKml', version: '2.+'
+}
+// https://mvnrepository.com/artifact/com.jgoodies/jgoodies-forms
+dependencies{
+	compile group: 'com.jgoodies', name: 'jgoodies-forms', version: '1.+'
+}
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+dependencies{
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '5.+'
+}
+// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+dependencies{
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.+'
+}
+// https://mvnrepository.com/artifact/com.miglayout/miglayout-swing
+dependencies{
+	compile group: 'com.miglayout', name: 'miglayout-swing', version: '5.+'
+}
