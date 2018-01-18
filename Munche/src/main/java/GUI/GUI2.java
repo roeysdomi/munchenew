@@ -139,6 +139,7 @@ public class GUI2 {
 	final TextField db_passw = new TextField("Lambda2();");
 	final TextField db_ip = new TextField("5.29.193.52");
 	final TextField db_port = new TextField("3306");
+	final TextField db_table = new TextField("ex4_db");
 
 	//--------filter checkbox------------
 	final JRadioButton ortype = new JRadioButton("OR");
@@ -683,13 +684,17 @@ public class GUI2 {
 		
 		JLabel lbldb = DefaultComponentFactory.getInstance().createLabel("Data base:");
 		lbldb.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lbldb.setBounds(367, 193, 116, 20);
+		lbldb.setBounds(367, 169, 116, 23);
 		frame.getContentPane().add(lbldb);
 		
 		JLabel dbuser = DefaultComponentFactory.getInstance().createLabel("user:");
 		dbuser.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		dbuser.setBounds(375, 220, 35, 20);
 		frame.getContentPane().add(dbuser);
+		JLabel dbuser2 = DefaultComponentFactory.getInstance().createLabel("table:");
+		dbuser2.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		dbuser2.setBounds(375, 196, 35, 20);
+		frame.getContentPane().add(dbuser2);
 		
 		JLabel dbip = DefaultComponentFactory.getInstance().createLabel("ip:");
 		dbip.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -951,6 +956,8 @@ public class GUI2 {
 		lblForLocationEnter.setBounds(274, 42, 128, 14);
 		frame.getContentPane().add(lblForLocationEnter);
 		
+		db_table.setBounds(425, 194, 88, 19);
+		frame.getContentPane().add(db_table);
 		db_user.setBounds(425, 219, 88, 19);
 		frame.getContentPane().add(db_user);
 		
@@ -1253,6 +1260,7 @@ public class GUI2 {
 				loaddb=1;
 				loadfiles=true;
 				MySQL sq=new MySQL(obj);
+				sq._table=db_table.getText();
 				sq._ip=db_ip.getText();
 				sq._password=db_passw.getText();
 				sq._port=db_port.getText();

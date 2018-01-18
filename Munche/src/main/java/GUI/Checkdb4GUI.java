@@ -86,7 +86,7 @@ public  class Checkdb4GUI implements Runnable  {
     		 String user=ron.db_user.getText();
     		 String passw=ron.db_passw.getText();
     		 String port=ron.db_port.getText();
-
+             String table=ron.db_table.getText();
     		 String url="jdbc:mysql://"+ip+":"+port+"/oop_course_ariel";
              _con = DriverManager.getConnection(url,user,passw);
              st = _con.createStatement();
@@ -95,7 +95,8 @@ public  class Checkdb4GUI implements Runnable  {
                  System.out.println(rs.getString(1));
              }
             
-             PreparedStatement pst = _con.prepareStatement("SELECT  table_name,  update_time FROM information_schema.tables where table_name='ex4_db'");
+             
+             PreparedStatement pst = _con.prepareStatement("SELECT  table_name,  update_time FROM information_schema.tables where table_name='"+table+"'");
              rs = pst.executeQuery();
              int linecounter=1;
         	    int counter=0;

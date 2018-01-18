@@ -25,6 +25,7 @@ public class MySQL {
       public static GUI2 ron;
 	  public static String _ip = "";
 	  public static String _port = "";
+	  public static String _table = "";
 
 	  public static String _url = "";
 	  public static String _user = "";
@@ -59,7 +60,7 @@ public class MySQL {
                 System.out.println(rs.getString(1));
             }
            
-            PreparedStatement pst = _con.prepareStatement("SELECT * FROM ex4_db");
+            PreparedStatement pst = _con.prepareStatement("SELECT * FROM "+_table);
             rs = pst.executeQuery();
             int linecounter=1;
        	    int counter=0;
