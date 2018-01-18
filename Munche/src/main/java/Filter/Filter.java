@@ -26,6 +26,7 @@ public class Filter {
 	public  String minutes2;
     
 	/**
+	 * NOT IN USE ANYMORE THREFORE NOT DOCUMIENTED
 	 */
 	
 	

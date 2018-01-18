@@ -56,7 +56,9 @@ public  class Checkdb4GUI implements Runnable  {
 	
 	public boolean checkfiles() throws InterruptedException
 	{  
-		
+		/**
+		 * ASK THE DB THE LAST DATE OF TABLE
+		 */
 		String b=readlastdate();
 		ron.textArea.append(" \n  last update of the data base :" +b+" \n started thread for check changing in the data base \n ");
 		boolean a=false;

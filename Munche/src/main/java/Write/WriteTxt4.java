@@ -21,7 +21,10 @@ public class WriteTxt4 {
 	public ArrayList<Wifi> temp_traininglist;
 	public ArrayList<Wifi> temp_pielist;
 	
-	
+	/**
+	 * NOT IN USE ANY MORE THAT WHY NOT DOCUMENTED
+	 * @throws IOException
+	 */
 	
 public WriteTxt4() throws IOException
 {    

@@ -2,6 +2,10 @@ package Algorithems;
 import Wifi.Wifi;
 
 public class Calculate2 {
+	
+	/**
+	 * CLASS THAT HANDLE THE CALCULATE OF ALGO2
+	 */
 	final int power=2;
 	final int norm=10000;
    	final double sigdiff=0.4;

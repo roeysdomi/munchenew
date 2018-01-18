@@ -1,6 +1,9 @@
 package Wifi;
 
 public class Wifi {
+	/**
+	 * THE CLASS THAT IS THE BASE FOR ALL THE DATA
+	 */
 	public String wifinum;
 	public String mac;
 	public String id;

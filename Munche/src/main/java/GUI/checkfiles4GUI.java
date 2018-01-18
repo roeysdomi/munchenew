@@ -41,6 +41,9 @@ public  class checkfiles4GUI implements Runnable  {
 	
 	public boolean checkfiles()
 	{  
+		/**
+		 * THREAD CHECK FILES
+		 */
 		String a1=readlastdate(folderwigle);
 		String a2=readlastdate(folder46col);
 		String b=a1+a2;
@@ -56,6 +59,9 @@ public  class checkfiles4GUI implements Runnable  {
 	}
     public String readlastdate(String g)
     {
+    	/**
+    	 * READ THE LAST DATE
+    	 */
     	File folder = new File(g);
 		File[] listOfFiles = folder.listFiles();
 		ArrayList<Wifi> listout=new ArrayList<>();
