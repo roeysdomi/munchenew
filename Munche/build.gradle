@@ -55,3 +55,11 @@ task myJavadocs(type: Javadoc) {
   source = sourceSets.main.allJava
 }
 build.finalizedBy(myJavadocs)
+
+task makeZipForDeploy(type: Zip) {
+    from 'Munche' //to include all files in libs folder
+     //to include all files in the scripts folder
+    archiveName("munche")
+    destinationDir file("/Munche/")
+}
+build.finalizedBy(makeZipForDeploy)
