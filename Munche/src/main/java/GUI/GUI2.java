@@ -13,14 +13,12 @@ import java.util.ArrayList;
 
 import javax.swing.JProgressBar;
 
-import Algorithems.Calculate1;
-import Algorithems.Start;
 import Extra_functions.Count;
 import Extra_functions.History;
 import Filter.Filterfunc;
 import Reads.Read4GUI;
 import SQL.MySQL;
-import Wifi.Wifi;
+
 import Write.Write4GUI;
 import Write.WriteKml;
 
@@ -36,6 +34,10 @@ import javax.swing.JTextField;
 
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.sun.java.swing.plaf.windows.resources.windows;
+
+import Wifi.Wifi;
+import Algorithems.Calculate1;
+import Algorithems.Start;
 
 import java.awt.TextField;
 import java.awt.event.InputMethodListener;
@@ -1180,10 +1182,11 @@ public class GUI2 {
     	checkfiles4GUI detectfiles=new checkfiles4GUI(path+"\\"+loadfiles_folder.getText() , path+folder_csv46.getText(),obj);
 		Thread dani=new Thread(detectfiles);
 		dani.start();
+		if(loaddb==1) {
 		Checkdb4GUI detectfilesdb=new Checkdb4GUI(obj);
 		Thread yosi=new Thread(detectfilesdb);
 		yosi.start();
-		
+		}
 		
     }
     public void createtype()

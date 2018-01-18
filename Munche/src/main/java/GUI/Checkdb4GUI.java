@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,7 +41,12 @@ public  class Checkdb4GUI implements Runnable  {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		checkfiles();
+		try {
+			checkfiles();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -48,7 +54,7 @@ public  class Checkdb4GUI implements Runnable  {
 	
 	
 	
-	public boolean checkfiles()
+	public boolean checkfiles() throws InterruptedException
 	{  
 		
 		String b=readlastdate();
@@ -59,7 +65,7 @@ public  class Checkdb4GUI implements Runnable  {
 			
            String c=readlastdate();
            if(!c.equals(b)) {ron.resetandload();ron.textArea.append(" \n  last update of the data base :" +c+" \n ");b=c;JOptionPane.showMessageDialog(null, "DETECT FILE CHANGE");}
-			
+           TimeUnit.SECONDS.sleep(30);
 		}
 		return a;
 	}

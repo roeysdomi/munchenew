@@ -18,7 +18,46 @@ public class Read {
 	String csvfilename;
 	
 	/////-----read and convert function---
+	public void Readwiglestest(String g) throws IOException
+	{
+		/*read wigile format*/
+		
+		File folder = new File(path+"\\"+g);
+		File[] listOfFiles = folder.listFiles();
+		ArrayList<Wifi> listout=new ArrayList<>();
+		int counter=1;
+			for (File file : listOfFiles)
+			{
+			
+				if (file.isFile()&&file.getName().contains("csv"))
+				{
+			         String name=file.getName();
+		
+			             String line;
+			             String deviceid1="";
+			        	  BufferedReader reader = new BufferedReader(new FileReader(path+"\\"+g+"\\"+name));
+			        	  while((line = reader.readLine()) != null)
+			              {    
+			        		    if(line.contains("WigleWifi") ) 
+			        		    {String []split=line.split(",");deviceid1=split[4];deviceid1=deviceid1.replaceAll("device=", "");  }
+			      				
+			        		    if (!line.equals("")&&!line.contains("SSID")&&!line.contains("WigleWifi-1.4")) 
+			      				{
+			                        Wifi wifi1=new Wifi(line);
+			                        wifi1.deviceid=deviceid1;
+			                        wifi1.setLine(counter++);
+			                        listout.add(wifi1);
+			                        
+			      				}
+			              }
+			    }
+		      
+			}
+			
+		   
+		
 	
+	}
 	public ArrayList<Wifi> converttocsv() throws FileNotFoundException
 	{
 		/**
